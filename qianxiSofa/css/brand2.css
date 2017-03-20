@@ -1,0 +1,375 @@
+.clear:after {
+  display: block;
+  overflow: hidden;
+  height: 0;
+  content: "";
+  clear: both;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.clear {
+  display: block;
+  content: '';
+  clear: both;
+  overflow: hidden;
+}
+.clearfix {
+  zoom: 1;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Microsoft YaHei", '微软雅黑', "Microsoft JhengHei", '华文细黑', 'STHeiti', 'MingLiu';
+  color: #666;
+  position: relative;
+}
+header {
+  background: #fff;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+header .headTop {
+  margin: auto;
+  width: 1120px;
+  height: 80px;
+}
+header .headTop .left {
+  margin: 15px 0;
+  float: left;
+}
+header .headTop .left h1 {
+  margin: 0;
+  display: inline-block;
+  float: left;
+}
+header .headTop .left div {
+  float: left;
+}
+header .headTop .left .line {
+  margin: 0 20px;
+}
+header .headTop .right {
+  float: right;
+  line-height: 80px;
+}
+header .headTop .right .box {
+  float: right;
+  margin: 10px 0 0 20px;
+  border: 1px solid #eeeeee;
+  padding: 3px;
+  width: 98px;
+}
+header .headTop .right .box img {
+  float: left;
+}
+header .headTop .right .box a {
+  float: right;
+}
+header .headTop .right .box a img {
+  display: block;
+  width: 21px;
+  height: 21px;
+  margin: 3px 5px;
+}
+header .headTop .QR {
+  float: right;
+}
+header .headTop .QR img {
+  margin: 15px 0;
+  width: 100%;
+  height: 100%;
+}
+nav {
+  background: #f76907;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  z-index: 10;
+}
+nav div {
+  width: 1120px;
+  height: 100%;
+  margin: auto;
+}
+nav div ul {
+  float: right;
+}
+nav div ul li {
+  float: left;
+}
+nav div ul li a {
+  padding: 0 30px;
+  font-size: 16px;
+  /*font-style: italic;*/
+  line-height: 40px;
+  font-weight: bolder;
+  font-family: '微软雅黑';
+  color: #fff;
+}
+nav div ul li a i {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 6px solid;
+  border-color: white transparent transparent white;
+  transform: rotate(45deg);
+  margin: -2px 5px;
+}
+nav div ul li a i img {
+  width: 100%;
+  height: 100%;
+}
+nav div ul li a:hover {
+  text-decoration: none;
+}
+nav div ul li:hover {
+  background: white;
+}
+nav div ul li:hover a {
+  color: #f76907;
+}
+nav div ul li:hover a:not(ol,li,a) {
+  color: #fff;
+}
+nav div ul li:hover a i {
+  border-color: #f76907 transparent transparent #f76907;
+  transform: rotate(225deg);
+  margin: 1px 5px;
+}
+nav div ul li:hover:nth-child(2) ol {
+  height: 200px;
+  transition: height 1s linear;
+}
+nav div ul li:hover:nth-child(2) ol li {
+  height: 40px;
+}
+nav div ul li:hover ol {
+  display: block;
+}
+nav div ul li:hover ol a {
+  color: #fff;
+}
+nav div ul:nth-child(2) ol {
+  height: 0;
+}
+nav div ul:nth-child(2) ol li {
+  height: 40px;
+}
+nav div ul:nth-child(4) ol {
+  height: 80px;
+}
+nav div ul:nth-child(4) ol li {
+  height: 40px;
+}
+nav div ul .active {
+  background: #fff;
+  color: #f76907;
+}
+.hide-box {
+  background: #ff8800;
+  color: #fff;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  border: 1px solid #eee;
+  z-index: 99;
+  display: none;
+}
+.hide-box li {
+  width: 100%;
+}
+.hide-box li a {
+  display: block;
+  text-align: center;
+}
+.hide-box li:hover a {
+  color: #f76907;
+}
+@media all and (max-width: 1000px) {
+  header .headTop {
+    width: 999px;
+    height: 50px;
+    margin: 0 auto 15px;
+    line-height: 60px;
+  }
+  header .headTop .left {
+    margin: 8px 0;
+    height: 100%;
+    width: 50%;
+  }
+  header .headTop .left h1 img {
+    width: 80%;
+    height: 80%;
+  }
+  header .headTop .left .line {
+    margin: -9px 4px;
+  }
+  header .headTop .left .line img {
+    display: inline-block;
+    height: 80%;
+  }
+  header .headTop .left .pro {
+    margin-left: 25px;
+  }
+  header .headTop .left .pro img {
+    width: 80%;
+    height: 80%;
+  }
+  header .headTop .right {
+    height: 100%;
+  }
+  header .headTop .right .QR img {
+    margin: 8px 0;
+    width: 80%;
+    height: 80%;
+  }
+  header .headTop .right .box {
+    margin: 0 0 60px 0;
+  }
+  header .headTop .right .box img {
+    width: 50%;
+    height: 80%;
+  }
+  header nav {
+    width: 100%;
+    height: 32px;
+  }
+  header nav div {
+    width: 999px;
+    height: 100%;
+  }
+  header nav div ul {
+    float: right;
+  }
+  header nav div ul li a {
+    padding: 0 24px;
+    font-size: 14px;
+    line-height: 32px;
+  }
+  header nav div ul li:hover ol {
+    display: block;
+    margin-top: -8px;
+  }
+}
+@media all and (max-width: 765px) {
+  header .headTop {
+    width: 765px;
+  }
+  header nav div ul {
+    float: left;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+a,
+img {
+  border: 0;
+  text-decoration: none;
+}
+body {
+  font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+}
+/* mainbanner */
+.mainbanner {
+  min-height: 700px;
+  width: 1000px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+.mainbanner .mainbanner_window {
+  left: 50%;
+  width: 2000px;
+  min-height: 700px;
+  overflow: hidden;
+  margin-left: -1000px;
+  position: absolute;
+}
+.mainbanner .mainbanner_window ul {
+  width: 999999px;
+  position: relative;
+  min-height: 700px;
+}
+.mainbanner .mainbanner_window ul li {
+  background: #cccccc;
+  width: 2000px;
+  min-height: 700px;
+  text-align: center;
+  float: left;
+  display: inline;
+}
+.mainbanner .mainbanner_list {
+  left: 120px;
+  top: 45%;
+  width: 500px;
+  height: 30px;
+  margin-left: -75px;
+  position: absolute;
+}
+.mainbanner .mainbanner_list li {
+  width: 15px;
+}
+.mainbanner .mainbanner_list li a {
+  background: url("../images/dot1.png") no-repeat;
+  width: 10px;
+  height: 25px;
+  line-height: 25px;
+  overflow: hidden;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  float: left;
+  display: inline-block;
+}
+.mainbanner .mainbanner_list li a:hover {
+  background: url("../images/dot2.png") no-repeat;
+  text-decoration: none;
+}
+.mainbanner .mainbanner_list li .active a {
+  background: url("../images/dot2.png") no-repeat;
+  text-decoration: none;
+}
+footer {
+  /*  position: absolute;*/
+  margin-top: 50px;
+  width: 100%;
+  height: 50px;
+  background: #322d28;
+}
+footer p {
+  height: 100%;
+  margin: auto;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+}
+@media all and (max-width: 765px) {
+  .mainbanner {
+    min-height: 560px;
+    width: 765px;
+  }
+  .mainbanner .mainbanner_window {
+    min-height: 560px;
+  }
+  .mainbanner .mainbanner_window ul li {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+  }
+}

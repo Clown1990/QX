@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻动态</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../css/animate.css" rel="stylesheet">
+    <link href="../../css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="../../css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/css.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <!--登录用户信息-->
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="text-muted text-xs block">用户:133576</span> </a>
+                        <a href="../login.html">退出</a>
+                    </div>
+                </li>
+                <!--菜单栏-->
+                <li>
+                    <a href="../user/userManage.html"><i class="fa fa-th-large"></i> <span class="nav-label">系统设置</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../user/userManage.html">用户管理</a></li>
+                        <li class=""><a href="../user/.html">员工风采</a></li>
+                        <li class=""><a href="../user/.html">企业荣誉</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="../custom/custom.html"><i class="fa fa-th-large"></i> <span class="nav-label">客户管理</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="../custom/custom.html">客户管理</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../news/news.html"><i class="fa fa-th-large"></i> <span class="nav-label">新闻动态</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../news/news.html">新闻动态</a></li>
+                        <li class=""><a href="../news/Activity.html">活动公告</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../store/storeManage.html"><i class="fa fa-th-large"></i> <span class="nav-label">店铺管理</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../store/storeManage.html">店铺管理</a></li>
+                    </ul>
+                </li>
+                <!--  <li>
+                      <a href="../qxdp/qxdp.html"><i class="fa fa-th-large"></i> <span class="nav-label">千禧搭配</span> <span class="fa arrow"></span></a>
+                      <ul class="nav nav-second-level">
+                          &lt;!&ndash;<li class=""><a href="../qxdp/qxdp.html">类别管理</a></li>&ndash;&gt;
+                          <li class=""><a href="../qxdp/upLoadFile.html">千禧搭配</a></li>
+                      </ul>
+                  </li>-->
+                <li>
+                    <a href="../product/product.html"><i class="fa fa-th-large"></i> <span class="nav-label">产品管理</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../product/Group.html">套餐管理</a></li>
+                        <li class=""><a href="../product/product.html">产品管理</a></li>
+                        <!--<li class=""><a href="../product/series.html">系列管理</a></li>-->
+                        <li class=""><a href="../product/pictures.html">图片管理</a></li>
+                        <li class=""><a href="../product/param.html">参数管理</a></li>
+                        <!--<li class=""><a href="../product/category.html">种类管理</a></li>-->
+                    </ul>
+                </li>
+                <li>
+                    <a href="../order/order.html"><i class="fa fa-th-large"></i> <span class="nav-label">订单管理</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../order/order.html">订单管理</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <!--内容-->
+        <div class="ibox-content">
+            <a href="order.html"> <button type="button" class="btn btn-primary btnSize">返回</button></a>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="productContent">
+                        <h2>订单名</h2>
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>编号</td>
+                                <td>编号内容</td>
+                            </tr>
+                            <tr>
+                                <td>客户名称</td>
+                                <td id="customName">客户名称</td>
+                            </tr>
+                            <tr>
+                                <td>联系电话</td>
+                                <td id="phone">123423423523</td>
+                            </tr>
+                            <tr>
+                                <td>时间</td>
+                                <td id="time">时间</td>
+                            </tr>
+                            <tr>
+                                <td>地址</td>
+                                <td id="address">地址</td>
+                            </tr>
+                            <tr>
+                                <td>内容</td>
+                                <td id="content">内容</td>
+                            </tr>
+                            <tr>
+                                <td>描述</td>
+                                <td id="comment">描述</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+var thisURL = decodeURI(document.URL);
+var getParam =thisURL.split("?")[1];
+var paramArr = getParam.split("&");
+$("#customName").html(paramArr[0].split("=")[1]);
+$("#phone").html(paramArr[1].split("=")[1]);
+$("#time").html(paramArr[2].split("=")[1]);
+$("#address").html(paramArr[3].split("=")[1]);
+$("#conten").html(paramArr[4].split("=")[1]);
+$("#comment").html(paramArr[5].split("=")[1]);
+</script>
+</body>
+
+</html>

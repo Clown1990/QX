@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻动态</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../css/animate.css" rel="stylesheet">
+    <link href="../../css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="../../css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/css.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <!--登录用户信息-->
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="text-muted text-xs block">用户:133576</span> </a>
+                        <a href="../login.html">退出</a>
+                    </div>
+                </li>
+                <!--菜单栏-->
+                <li>
+                    <a href="../user/userManage.html"><i class="fa fa-th-large"></i> <span class="nav-label">系统设置</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../user/userManage.html">用户管理</a></li>
+                        <li class=""><a href="../user/.html">员工风采</a></li>
+                        <li class=""><a href="../user/.html">企业荣誉</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="../custom/custom.html"><i class="fa fa-th-large"></i> <span class="nav-label">客户管理</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="../custom/custom.html">客户管理</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../news/news.html"><i class="fa fa-th-large"></i> <span class="nav-label">新闻动态</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../news/news.html">新闻动态</a></li>
+                        <li class=""><a href="../news/Activity.html">活动公告</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../store/storeManage.html"><i class="fa fa-th-large"></i> <span class="nav-label">店铺管理</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../store/storeManage.html">店铺管理</a></li>
+                    </ul>
+                </li>
+                <!--  <li>
+                      <a href="../qxdp/qxdp.html"><i class="fa fa-th-large"></i> <span class="nav-label">千禧搭配</span> <span class="fa arrow"></span></a>
+                      <ul class="nav nav-second-level">
+                          &lt;!&ndash;<li class=""><a href="../qxdp/qxdp.html">类别管理</a></li>&ndash;&gt;
+                          <li class=""><a href="../qxdp/upLoadFile.html">千禧搭配</a></li>
+                      </ul>
+                  </li>-->
+                <li>
+                    <a href="../product/product.html"><i class="fa fa-th-large"></i> <span class="nav-label">产品管理</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../product/Group.html">套餐管理</a></li>
+                        <li class=""><a href="../product/product.html">产品管理</a></li>
+                        <!--<li class=""><a href="../product/series.html">系列管理</a></li>-->
+                        <li class=""><a href="../product/pictures.html">图片管理</a></li>
+                        <li class=""><a href="../product/param.html">参数管理</a></li>
+                        <!--<li class=""><a href="../product/category.html">种类管理</a></li>-->
+                    </ul>
+                </li>
+                <li>
+                    <a href="../order/order.html"><i class="fa fa-th-large"></i> <span class="nav-label">订单管理</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../order/order.html">订单管理</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <!--内容-->
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox-content">
+                        <!--按钮组件-->
+                        <div class="ibox-content">
+                            <button type="button" style="float: left;margin-right: 1%" class="btn btn-w-m btn-success" data-toggle="modal" data-target="#myModal" onclick="paramInfoHandle(0,this,'addParam');"><i class="fa fa-plus"></i>添加</button>
+                            <button type="button" style="float: left;margin-right: 1%;margin-bottom: 20px;" class="btn btn-w-m btn-success" data-toggle="modal" onclick="mulitDelete();">批量删除</button>
+                        </div>
+                        <!--新闻列表-->
+                        <table class="table table-bordered">
+                        	<tbody id="paramTable"></tbody>
+                        </table>
+                        <!--<div class="tcdPageCode">-->
+                        <!--</div>-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">添加参数</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="activityForm" id="addParamForm">
+                            <select class="form-control" name="categoryId" id="categoryId">
+                                <option value="1">类别</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="中文名称" name="cname" id="cname">
+                            <input type="text" class="form-control" placeholder="英文名称" name="ename" id="ename">
+                            <input type="text" class="form-control" placeholder="顺序" name="level" id="level">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" onclick="insertParamControl();">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel1">修改参数</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="activityForm" id="updateParamForm">
+                           <select class="form-control" name="categoryId" id="updateCategoryId">
+                                <option value="1">类别</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="中文名称" name="cname" id="updateCname">
+                            <input type="text" class="form-control" placeholder="英文名称" name="ename" id="updateEname">
+                            <input type="text" class="form-control" placeholder="顺序" name="level" id="updateLevel">
+                             <input type="text" hidden="true" name="paramId" id="updateParamId"/>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" onclick="updateParamControl();">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../../js/inspinia.js"></script>
+<script src="../../js/plugins/pace/pace.min.js"></script>
+<script src="../../js/jquery.page.js"></script>
+<script src="../../js/paramManage.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻动态</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../css/animate.css" rel="stylesheet">
+    <link href="../../css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="../../css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/css.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <!--登录用户信息-->
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="text-muted text-xs block">用户:133576</span> </a>
+                        <a href="../login.html">退出</a>
+                    </div>
+                </li>
+                <!--菜单栏-->
+                <li>
+                    <a href="../user/userManage.html"><i class="fa fa-th-large"></i> <span class="nav-label">系统设置</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../user/userManage.html">用户管理</a></li>
+                        <li class=""><a href="../user/.html">员工风采</a></li>
+                        <li class=""><a href="../user/.html">企业荣誉</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="../custom/custom.html"><i class="fa fa-th-large"></i> <span class="nav-label">客户管理</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="../custom/custom.html">客户管理</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../news/news.html"><i class="fa fa-th-large"></i> <span class="nav-label">新闻动态</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../news/news.html">新闻动态</a></li>
+                        <li class=""><a href="../news/Activity.html">活动公告</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../store/storeManage.html"><i class="fa fa-th-large"></i> <span class="nav-label">店铺管理</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../store/storeManage.html">店铺管理</a></li>
+                    </ul>
+                </li>
+                <!--  <li>
+                      <a href="../qxdp/qxdp.html"><i class="fa fa-th-large"></i> <span class="nav-label">千禧搭配</span> <span class="fa arrow"></span></a>
+                      <ul class="nav nav-second-level">
+                          &lt;!&ndash;<li class=""><a href="../qxdp/qxdp.html">类别管理</a></li>&ndash;&gt;
+                          <li class=""><a href="../qxdp/upLoadFile.html">千禧搭配</a></li>
+                      </ul>
+                  </li>-->
+                <li>
+                    <a href="../product/product.html"><i class="fa fa-th-large"></i> <span class="nav-label">产品管理</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../product/Group.html">套餐管理</a></li>
+                        <li class=""><a href="../product/product.html">产品管理</a></li>
+                        <!--<li class=""><a href="../product/series.html">系列管理</a></li>-->
+                        <li class=""><a href="../product/pictures.html">图片管理</a></li>
+                        <li class=""><a href="../product/param.html">参数管理</a></li>
+                        <!--<li class=""><a href="../product/category.html">种类管理</a></li>-->
+                    </ul>
+                </li>
+                <li>
+                    <a href="../order/order.html"><i class="fa fa-th-large"></i> <span class="nav-label">订单管理</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class=""><a href="../order/order.html">订单管理</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <!--内容-->
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox-content">
+                        <!--按钮组件-->
+                        <div class="ibox-content">
+                            <button type="button" style="float: left;margin-right: 1%" class="btn btn-w-m btn-success" data-toggle="modal" data-target="#myModal" onclick="productInfoHandle(0,this,'addProduct');"><i class="fa fa-plus"></i>添加</button>
+                            <button type="button" style="float: left;margin-right: 1%" class="btn btn-w-m btn-success" data-toggle="modal" onclick="mulitDelete();">批量删除</button>
+                            <div class="input-group" style="width: 40%;float: right;">
+                            	<input type="text" class="form-control" placeholder="输入产品编号" id="selectProductName"> <span class="input-group-btn"> 
+                            	<button type="button" class="btn btn-primary" onclick="fuzzySearch();">搜索
+                            </button> </span></div>
+
+                            <div class="clear"></div>
+                        </div>
+                        <!--新闻列表-->
+                        <table class="table table-bordered">
+                            <tbody id="productTable"></tbody>
+                        </table>
+                        <!--添加新闻动态的弹出框内容-->
+                        <div class="tcdPageCode">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">添加参数</h4>
+                    </div>
+                    <form class="activityForm" id="addProductForm" action="/QXJS/productServlet" enctype="multipart/form-data" method="post">
+                    	<div class="modal-body">
+                        	<input type="text" class="form-control" placeholder="产品编号" name="productCd" id="productCd">
+                            <select class="form-control" name="groupId" id="groupId">
+                                <option value="1">类别</option>
+                            </select>
+                            <select class="form-control" name="categoryId" id="categoryId" onchange="showParam(0);">
+                                <option value="1">套餐</option>
+                            </select>
+
+                            <input type="text" class="form-control" placeholder="产品名称" name="productName" id="productName">
+                            <div class="storeSetAdPhotoImgU">
+                                	图片上传
+                                <img src="" />
+                            </div>
+                            <input type="file" name="file" class="storeSetAdPhotoImgUB" /><br>
+                            <input type="text" class="form-control" placeholder="产品特点" name="comment" id="comment">
+                            <div class="" id="paramList">
+                            </div>
+	                    </div>
+	                    <div class="modal-footer">
+	                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	                        <button type="submit" class="btn btn-primary">保存</button>
+	                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel1">修改参数</h4>
+                    </div>
+                    <form class="activityForm" id="updateProductForm" action="/QXJS/productServlet" enctype="multipart/form-data" method="post">
+                    	<div class="modal-body">
+                    		<input type="text" class="form-control" hidden="true" name="productId" id="updateProductId">
+                        	<input type="text" class="form-control" placeholder="产品编号" name="productCd" id="updateProductCd">
+                            <select class="form-control" name="groupId" id="updateGroupId">
+                                <option value="1">类别</option>
+                            </select>
+                            <select class="form-control" name="categoryId" id="updateCategoryId" onchange="showParam(1);">
+                                <option value="1">套餐</option>
+                            </select>
+
+                            <input type="text" class="form-control" placeholder="产品名称" name="productName" id="updateProductName">
+                            <div class="storeSetAdPhotoImgU">
+                                	图片上传
+                                <img src="" />
+                            </div>
+                            <input type="file" name="file" class="storeSetAdPhotoImgUB" /><br>
+                            <input type="text" class="form-control" placeholder="产品特点" name="comment" id="updateComment">
+                            <div class="" id="updateParamList">
+                            </div>
+	                    </div>
+	                    <div class="modal-footer">
+	                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	                        <button type="submit" class="btn btn-primary">保存</button>
+	                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../../js/inspinia.js"></script>
+<script src="../../js/plugins/pace/pace.min.js"></script>
+<script src="../../js/jquery.page.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/productManage.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../plugin/diyUpload/css/webuploader.css">
+<link rel="stylesheet" type="text/css" href="../../plugin/diyUpload/css/diyUpload.css">
+<!--上传图片-->
+</body>
+
+</html>

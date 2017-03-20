@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻动态的详情和公告的详情</title>
+    <style>
+        .content{text-align: center;font-size: 14px;padding: 20px 15px;}
+        .content h2{font-size: 20px;}
+        .time {color: #666;font-size: 12px;}
+        .contentC {color: #666;text-align: left;text-indent: 2em;line-height: 20px;}
+        .contentC img {width: 100%;max-width: 600px;text-align: center;display: block;margin: 10px auto;}
+    </style>
+</head>
+<body>
+<div class="content">
+    <h2 id="title">新闻名新闻名新闻名新闻名新闻名新闻名</h2>
+    <p class="time" id="time">2015年6月8日</p>
+    <div class="contentC" id="content">
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        <img src="../../img/p_big1.jpg">
+    </div>
+</div>
+<script src="../../js/jquery-2.1.1.js"></script>
+<script type="text/javascript">
+var thisURL = document.URL;
+var getParam = thisURL.split("?")[1];
+var activityId = getParam.split("=")[1];
+$.ajax({
+	type : "GET",
+	url : "/QXJS/activity/selectActivityById",
+	dataType : "json",
+	contentType : "application/json",
+	data : {"activityId" : activityId},
+	success : function(msg) {
+		var activity = msg.list;
+		$("#title").html(activity.title);
+		$("#time").html(formatDate(activity.time));
+		$("#content").html(activity.content);
+	},
+	error: function () {
+		alert("异常！");
+	}
+});
+
+function formatDate(timeStamp){
+	if(timeStamp == 0) var d = new Date();    //根据时间戳生成的时间对象
+	else var d = new Date(timeStamp*1000);
+	var yyyy = d.getFullYear();      //年
+	var mm = d.getMonth() + 1;     //月
+	var dd = d.getDate();          //日
+	var dateStr = yyyy + "-";
+	if(mm < 10) dateStr += "0";
+	dateStr += mm + "-";
+	if(dd < 10) dateStr += "0";
+	dateStr += dd + " ";
+	return dateStr;
+}
+</script>
+</body>
+
+</html>

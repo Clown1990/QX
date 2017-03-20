@@ -1,0 +1,59 @@
+/*css reset*/
+body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img {border:0;}
+address,caption, cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul,li {list-style:none;}
+th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before, q:after{content:' '}
+abbr,acronym{border:0;}
+a{color: #333333;text-decoration: none;}
+a:link,a:visited{text-decoration:none;}
+input,button{outline:none;}
+input {color: #b1b1b1;}
+.left {float: left}
+.clear {clear: both;}
+.right {float: right;}
+body {font-family:"Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu;}
+
+
+
+
+.nav-content table tr{margin: 10px 0;display: inline-block}
+.turnToAdd label { width: 130px;text-align: right;padding-right: 10px;margin-top: 10px;}
+.turnToAdd input { margin-top: 10px;}
+.turnToAdd select { margin-top: 10px;}
+.left-nav li {}
+.btnSize {padding: 2px 5px;}
+.addManage label {margin-top: 20px;}
+.activityForm input{margin-top: 10px;}
+.activityForm select{margin-top: 10px;}
+.activityForm #box{margin-top: 10px;}
+.UpFileImg  img{width: 80px;height: 80px;}
+.table-bordered img{width: 80px;height: 80px;}
+.tcdPageCode{padding: 15px 20px;text-align: left;color: #ccc;}
+.tcdPageCode a{display: inline-block;color: #428bca;display: inline-block;height: 25px;	line-height: 25px;	padding: 0 10px;border: 1px solid #ddd;	margin: 0 2px;border-radius: 4px;vertical-align: middle;}
+.tcdPageCode a:hover{text-decoration: none;border: 1px solid #428bca;}
+.tcdPageCode span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #428bca;	border: 1px solid #428bca;border-radius: 4px;vertical-align: middle;}
+.tcdPageCode span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}
+
+
+#imgbox-loading {position: absolute;top: 0;left: 0;	cursor: pointer;display: none;z-index: 10000!important;}
+#imgbox-loading div {background: #FFF;width: 100%;height : 100%;}
+#imgbox-overlay {position: absolute;top: 0;	left: 0;width: 100%;height: 100%;background: #000;display: none;z-index: 9999;}
+.imgbox-wrap {position: absolute;top: 0;left: 0;background: #FFF;display: none;	z-index: 10000!important;}
+.imgbox-img {padding: 0;margin: 0;border: none;width: 100%;	height: 100%;vertical-align: top;}
+.imgbox-title {	padding-top: 10px;font-size: 11px;text-align: center;font-family: Arial;color: #333;display: none;}
+.imgbox-bg-wrap {position: absolute;padding: 0;margin: 0;display: none;}
+.imgbox-bg {position: absolute;width: 20px;	height: 20px;}
+
+.storeSetAdPhotoImgU img {width: 100px;height: 100px;}
+.checkboxAll {margin-left: 2px!important;margin-top: 2px!important;}
+.table-bordered th {text-align: center}
+.table-bordered td {text-align: center}
+.ibox-content {border-top: none;}
+.productContent h2 {font-size: 20px;text-align: center;margin-bottom: 20px;}
+.containerA {width: 100%;}
+.modal-dialog form label {margin-top: 20px;}
+.control-group input {margin: 0;}
